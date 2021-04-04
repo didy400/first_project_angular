@@ -7,24 +7,18 @@
 
       <div class="group block rounded-lg p-4 border border-gray-200 divide-y divide-gray-100">
         <ul *ngFor="let d of data">
-          <li ><button (click)='getDetails'>{{d.name}}</button></li>
+          <li ><button (click)='getDetails(d.id)'>{{d.name}}</button></li>
         </ul>
       </div>
     </div>
 
     <div class="row-start-1 col-start-2 col-span-2">
       <h1 class="text-center">Detail</h1>
-
-
-      <app-detail class="group block rounded-lg p-4 border border-gray-200"></app-detail>
+      <p class="group block rounded-lg p-4 border border-gray-200" ></p>
+      
     </div>
   </div>
 </div>
-
-
-
-
-
 
 
 <router-outlet></router-outlet>

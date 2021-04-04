@@ -10,7 +10,8 @@ export class AppComponent {
 
     
   data:Array<any>
-
+  details:Array<any>
+  
   constructor(private JSONplaceholder: JSONPlaceholderService) {
     this.data = new Array<any>()
   };
@@ -21,7 +22,9 @@ export class AppComponent {
       this.data = data
     })
   };
-
+  getDetails(){
+    this.data
+  }
 }
 
 
