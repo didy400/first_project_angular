@@ -4,21 +4,79 @@
   <div class="grid grid-flow-col grid-flow-row-2 grid-cols-3 gap-4">
     <div>
       <h1 class="text-center">List</h1>
-
+  
       <div class="group block rounded-lg p-4 border border-gray-200 divide-y divide-gray-100">
         <ul *ngFor="let d of data">
-          <li ><button (click)='getDetails(d.id)'>{{d.name}}</button></li>
+          <li ><button  class="btn btn--primary" (click)='getDetails(d.id)'>{{d.name}}</button></li>
         </ul>
       </div>
     </div>
 
     <div class="row-start-1 col-start-2 col-span-2">
-      <h1 class="text-center">Detail</h1>
-      <p class="group block rounded-lg p-4 border border-gray-200" ></p>
       
+      <div *ngIf="detailData">
+        <h1 class="text-center">Detail</h1>
+        <div class="group block rounded-lg p-4 border border-gray-200 divide-y divide-gray-100" >
+          <table>
+            <tr>
+              <td class="text-left">Name:</td> 
+              <td class="text-rigth">{{detailData.name}}</td>
+            </tr>
+           <tr>
+              <td class="text-left">Usrname: </td> 
+              <td class="text-rigth">{{detailData.username}}</td>
+            </tr>
+            <tr>
+              <td class="text-left">Email: </td> 
+              <td class="text-rigth">{{detailData.email}}</td>
+            </tr>
+          </table>
+          <table>
+            <tr><th>Adress: </th></tr>
+            <tr>
+              <td></td><td>Street: </td><td class="text-rigth">{{detailData.address.street}}</td>
+            </tr>
+            <tr>
+              <td></td><td>Suite: </td><td>{{detailData.address.suite}}</td>
+            </tr>
+            <tr>
+              <td></td><td>City: </td> <td>{{detailData.address.city}}</td>
+            </tr>
+            <tr>
+              <td></td><td>Zipcode: </td> <td>{{detailData.address.zipcode}}</td>
+            </tr>
+            <tr>
+              <td></td> <td>Lat:</td><td> {{detailData.address.geo.lat}}</td>
+            </tr>
+            <tr>
+              <td></td> <td>Lgn:</td> <td>{{detailData.address.geo.lng}}</td>
+            </tr>
+          </table>
+          <table>
+            <tr>
+              <td class="text-left">Phone: </td> 
+              <td class="text-rigth">{{detailData.phone}}</td>
+            </tr>
+            <tr>
+              <td class="text-left">Website: </td> 
+              <td class="text-rigth">{{detailData.website}}</td>
+            </tr>
+          </table>
+          <table>
+            <tr><th>Company: </th></tr>
+            <tr>
+              <td></td> <td>Name: </td> <td>{{detailData.company.name}}</td> 
+            </tr>
+            <tr>  
+              <td></td> <td>CatchPhrase: </td><td>{{detailData.company.catchPhrase}}</td>
+            </tr>
+            <tr>
+              <td></td> <td>Bs: </td><td>{{detailData.company.bs}}</td>
+            </tr>
+          </table>
+        </div>  
+      </div>
     </div>
   </div>
 </div>
 
-
-<router-outlet></router-outlet>

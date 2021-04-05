@@ -8,7 +8,7 @@ import { JSONPlaceholderService } from './services/jsonplaceholder.service';
 export class AppComponent {
   title = 'cyberlead-project';
 
-    
+  detailData:any 
   data:Array<any>
   details:Array<any>
   
@@ -22,8 +22,10 @@ export class AppComponent {
       this.data = data
     })
   };
-  getDetails(){
-    this.data
+
+  getDetails(id){
+    console.log(id)
+    this.detailData = this.data.find(d => d.id == id)
   }
 }
 
